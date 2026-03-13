@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { use } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+
+  const navigate=useNavigate();
+  const Start=() => {
+    navigate('/snippet');
+  }
+  
+
   return (
     <div>
        <div className='px-10'>
@@ -11,7 +19,7 @@ const Home = () => {
             <h1 className='font-bold text-4xl'>Turn Your Code Into Beautiful Snippets</h1>
           <p className='text-xl'>Create stunning, shareable images of your code in seconds. Perfect for social media, blogs, and documentation.</p>
           </div>
-          <button className='bg-yellow-200 px-5 h-15 rounded-2xl text-lg'>Get started</button>
+          <button onClick={Start} className='bg-yellow-200 px-5 h-15 rounded-2xl text-lg'>Get started</button>
         </div>
 
         <div className="r w-[70%]">
