@@ -1,31 +1,31 @@
-import React from 'react'
-import Togglebtn from './Togglebtn'
+import React from "react";
+import Togglebtn from "./Togglebtn";
 
 const Snippets = () => {
   return (
-    <div>
+    <div className="h-screen">
       <div className="topp flex gap-5">
         <div className="theme">
-            <label htmlFor="Colour">Theme</label>
-            <select name="Colour" id="Colour">
-                <option value="one">One</option>
-                <option value="two">Two</option>
-                <option value="custom">Custom</option>
-            </select>
+          <label htmlFor="Colour">Theme</label>
+          <select name="Colour" id="Colour">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="custom">Custom</option>
+          </select>
         </div>
         <div className="bgd">
-          <label htmlFor='bg'>Background</label>
-          <Togglebtn/>
+          <label htmlFor="bg">Background</label>
+          <Togglebtn />
         </div>
 
         <div className="theme">
           <label htmlFor="theme">Card Theme</label>
-          <Togglebtn/>
+          <Togglebtn />
         </div>
 
         <div className="no">
           <label htmlFor="line">Line Numbers</label>
-          <Togglebtn/>
+          <Togglebtn />
         </div>
 
         <div className="font">
@@ -39,7 +39,7 @@ const Snippets = () => {
 
         <div className="round">
           <label htmlFor="radius">Rounded Corners</label>
-          <Togglebtn/>
+          <Togglebtn />
         </div>
 
         <div className="padding">
@@ -67,20 +67,42 @@ const Snippets = () => {
         </div>
 
         <div className="s">
-        <label htmlFor="st">Style</label>
-        <select name="st" id="st">
-          <option value="">Mac</option>
-          <option value="">VS Code</option>
-          <option value="">Minimal (No Header)</option>
-        </select>
+          <label htmlFor="st">Style</label>
+          <select name="st" id="st">
+            <option value="">Mac</option>
+            <option value="">VS Code</option>
+            <option value="">Minimal (No Header)</option>
+          </select>
+        </div>
+
+        <div className="save">
+          <button>Download</button>
         </div>
       </div>
 
-      <div className="txt">
-        <textarea name="" id="" placeholder></textarea>
+      <div className="txt flex h-[45%] items-center justify-center">
+        <textarea
+          className="min-h-40 min-w-100"
+          name=""
+          id=""
+          placeholder="Enter your code here.."
+        ></textarea>
+      </div>
+
+      <div className="preview flex justify-center">
+        <div className="bg-red-500 min-h-50 min-w-100 flex justify-center items-center">
+        <pre className="bg-gray-500 h-30 min-w-80 flex items-center text-white whitespace-pre-wrap font-mono p-5">
+          <code>
+            {`//Your code 
+function sayHello(){
+  console.log("Hello World!")
+}`}
+          </code>
+        </pre>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Snippets
+export default Snippets;
