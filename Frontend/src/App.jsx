@@ -12,8 +12,8 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<><Navbar/><Home/><Footer/></>}/>
-      <Route path='/snippet' element={<><Snippets/><Footer/></>}/>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/snippet' element={<Snippets/>}/>
     </Routes>
     </BrowserRouter>
     </>

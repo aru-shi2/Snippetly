@@ -1,9 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import Togglebtn from "./Togglebtn";
+import Footer from "./Footer";
 
 const Snippets = () => {
+
+  const [bgToggle, setbgToggle] = useState(false)
+  const [themeToggle, setthemeToggle] = useState(false)
+  const [lineToggle, setlineToggle] = useState(false)
+  
+
   return (
-    <div className="h-screen">
+    <div className="h-screen flex flex-col gap-10">
       <div className="topp flex gap-5">
         <div className="theme">
           <label htmlFor="Colour">Theme</label>
@@ -15,17 +23,20 @@ const Snippets = () => {
         </div>
         <div className="bgd">
           <label htmlFor="bg">Background</label>
-          <Togglebtn />
+          <Togglebtn toggled={bgToggle}
+          isOn={()=>setbgToggle(!bgToggle)}
+          />
         </div>
 
         <div className="theme">
           <label htmlFor="theme">Card Theme</label>
-          <Togglebtn />
+          <Togglebtn toggled={themeToggle}
+          isOn={()=>setthemeToggle(!themeToggle)}/>
         </div>
-
         <div className="no">
           <label htmlFor="line">Line Numbers</label>
-          <Togglebtn />
+          <Togglebtn toggled={lineToggle}
+          isOn={()=>setlineToggle(!lineToggle)}/>
         </div>
 
         <div className="font">
@@ -35,11 +46,6 @@ const Snippets = () => {
             <option value="m">Medium</option>
             <option value="l">Large</option>
           </select>
-        </div>
-
-        <div className="round">
-          <label htmlFor="radius">Rounded Corners</label>
-          <Togglebtn />
         </div>
 
         <div className="padding">
@@ -80,7 +86,7 @@ const Snippets = () => {
         </div>
       </div>
 
-      <div className="txt flex h-[45%] items-center justify-center">
+        <div className="txt flex h-[45%] items-center justify-center">
         <textarea
           className="min-h-40 min-w-100"
           name=""
@@ -91,15 +97,19 @@ const Snippets = () => {
 
       <div className="preview flex justify-center">
         <div className="bg-red-500 min-h-50 min-w-100 flex justify-center items-center">
-        <pre className="bg-gray-500 h-30 min-w-80 flex items-center text-white whitespace-pre-wrap font-mono p-5">
-          <code>
-            {`//Your code 
+          <pre className="bg-gray-500 min-h-30 min-w-80 flex items-center text-white whitespace-pre-wrap font-mono p-5">
+            <code>
+              {`//Your code 
 function sayHello(){
   console.log("Hello World!")
 }`}
-          </code>
-        </pre>
+            </code>
+          </pre>
         </div>
+      </div>
+
+      <div className="foot bottom-0">
+        <Footer/>
       </div>
     </div>
   );
