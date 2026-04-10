@@ -5,7 +5,8 @@ import Footer from "./Footer";
 
 const Snippets = () => {
 
-  const [bgToggle, setbgToggle] = useState(false)
+  const [text, settext] = useState("")
+  const [bgToggle, setbgToggle] = useState(true)
   const [themeToggle, setthemeToggle] = useState(false)
   const [lineToggle, setlineToggle] = useState(false)
   
@@ -86,20 +87,21 @@ const Snippets = () => {
         </div>
       </div>
 
-        <div className="txt flex h-[45%] items-center justify-center">
+        <div className="txt flex h-[45%] items-center justify-center ">
         <textarea
-          className="min-h-40 min-w-100"
+        onChange={(e)=>settext(e.target.value)}
+          className="min-h-40 min-w-100 border p-2"
           name=""
           id=""
           placeholder="Enter your code here.."
         ></textarea>
       </div>
 
-      <div className="preview flex justify-center">
-        <div className="bg-red-500 min-h-50 min-w-100 flex justify-center items-center">
-          <pre className="bg-gray-500 min-h-30 min-w-80 flex items-center text-white whitespace-pre-wrap font-mono p-5">
+      <div className="preview flex max-w-3xl mx-auto justify-center">
+        <div className="bg-red-500 p-6 flex justify-center items-center">
+          <pre className="bg-gray-500 overflow-x-auto w-full flex items-center text-white whitespace-pre-wrap font-mono p-5">
             <code>
-              {`//Your code 
+              {text?text:`//Your code 
 function sayHello(){
   console.log("Hello World!")
 }`}
