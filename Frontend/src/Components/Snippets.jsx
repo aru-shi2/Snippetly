@@ -13,7 +13,7 @@ const Snippets = () => {
 
   return (
     <div className="h-screen flex flex-col gap-10">
-      <div className="topp flex gap-5">
+      <div className="topp flex gap-5 p-1">
         <div className="theme">
           <label htmlFor="Colour">Theme</label>
           <select name="Colour" id="Colour">
@@ -87,19 +87,19 @@ const Snippets = () => {
         </div>
       </div>
 
-        <div className="txt flex h-[45%] items-center justify-center ">
+        <div className="txt min-w-md min-h-[30%] max-w-3xl flex mx-auto justify-center ">
         <textarea
         onChange={(e)=>settext(e.target.value)}
-          className="min-h-40 min-w-100 border p-2"
+          className="w-full border p-2"
           name=""
           id=""
           placeholder="Enter your code here.."
         ></textarea>
       </div>
 
-      <div className="preview flex max-w-3xl mx-auto justify-center">
-        <div className="bg-red-500 p-6 flex justify-center items-center">
-          <pre className="bg-gray-500 overflow-x-auto w-full flex items-center text-white whitespace-pre-wrap font-mono p-5">
+      <div className="preview flex min-w-md h-auto mx-auto justify-center">
+      <div className={`${bgToggle?"bg-red-500":"bg-transparent"} w-full p-6 flex justify-center items-center`}>
+          <pre className="visible bg-gray-500 overflow-x-auto w-full flex items-center text-white whitespace-pre-wrap font-mono p-5">
             <code>
               {text?text:`//Your code 
 function sayHello(){
@@ -110,7 +110,7 @@ function sayHello(){
         </div>
       </div>
 
-      <div className="foot bottom-0">
+      <div className="foot bottom-0 fixed p-2">
         <Footer/>
       </div>
     </div>
