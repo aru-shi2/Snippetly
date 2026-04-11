@@ -16,7 +16,6 @@ const Home = () => {
           <div className="nav">
           <Navbar/>
           </div>
-          di
           <div className="content flex gap-30">
             <div className="l space-y-15">
               <div className="text space-y-8">

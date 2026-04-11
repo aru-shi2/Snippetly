@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import Togglebtn from "./Togglebtn";
 import Footer from "./Footer";
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import {oneDark} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const Snippets = () => {
 
@@ -13,6 +15,7 @@ const Snippets = () => {
 
   return (
     <div className="h-screen flex flex-col gap-10">
+
       <div className="topp flex gap-5 p-1">
         <div className="theme">
           <label htmlFor="Colour">Theme</label>
